@@ -10,7 +10,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('chat.index');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -28,5 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/groups', [GroupController::class, 'store'])->name('groups.store');
     Route::post('/groups/{group}/members', [GroupController::class, 'addMember'])->name('groups.addMember');
 });
+
+// Daftarkan route otentikasi WebSocket (wajib ada agar private channel bisa bekerja)
+use Illuminate\Support\Facades\Broadcast;
+Broadcast::routes(['middleware' => ['web', 'auth']]);
 
 require __DIR__.'/auth.php';

@@ -62,4 +62,12 @@ class MessageSent implements ShouldBroadcastNow
             'created_at'  => $this->message->created_at->format('H:i'),
         ];
     }
+
+    /**
+     * Tentukan nama event secara eksplisit
+     */
+    public function broadcastAs(): string
+    {
+        return 'MessageSent';
+    }
 }
