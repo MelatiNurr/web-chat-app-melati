@@ -2,7 +2,7 @@
 
 MelChat adalah aplikasi obrolan (*chatting*) berbasis web yang memungkinkan pengguna untuk bertukar pesan secara *real-time* tanpa perlu memuat ulang (*refresh*) halaman. Aplikasi ini dibangun dengan framework **Laravel 12** dan memanfaatkan teknologi **Laravel Reverb** sebagai server WebSockets.
 
-Proyek ini dikembangkan oleh:
+Pembuat :
 * **Nama:** Melati Nur Sabila
 * **NIM:** 240180044
 
